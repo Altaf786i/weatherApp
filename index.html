@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">WeatherApp</div>
+            <nav>
+                <ul>
+                    <li class="listitem"><a href="/">Dashboard</a></li>
+                    <li class="listitem"><a href="/table.html">Table</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+
+            <div class="start" style="display: flex;">
+            <div class="search-box">
+                <input type="text" id="cityInput" style="border-color: #3ebfcb;" placeholder="Enter city name">
+                <button id="getWeatherBtn" style="border-radius: 5px;">Get Weather</button>
+            </div>
+
+            <div class="profile" style="margin-left: 600px;">
+                <img src="/img/altaf.jpg" alt="Profile Picture">
+                <span style="color: white ; background-color: #3ebfcb; padding: 3px; border-radius: 3px;">Altaf Rehman</span>
+            </div>
+        </div>
+
+            <div id="weatherWidget" class="weather-widget">
+                <h2 class="pill">City Name: <span id="cityName" ></span></h2>
+                <p class="pill">Weather Description: <span id="weatherDescription" ></span></p>
+                <img id="weatherIcon" src="/img/icon.png" alt="Weather Icon" style="display: none;">
+                <p class="pill">Temperature: <span id="temperature"></span>°C</p>
+                <p class="pill">Humidity: <span id="humidity"></span>%</p>
+                <p class="pill">Wind Speed: <span id="windSpeed"></span> m/s</p>
+            </div>
+            
+
+            <div class="charts-container">
+                <div class="canvas-container">
+                    <canvas id="temperatureBarChart"></canvas>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="weatherConditionChart"></canvas>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="temperatureLineChart"></canvas>
+                </div>
+            </div>
+
+            <div id="chatbotWidget">
+                <h3>Ask the Weather Chatbot</h3>
+                <input type="text" id="chatInput" placeholder="Ask a question...">
+                <button id="askChatbotBtn">Ask</button>
+                <div id="chatResponse"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
